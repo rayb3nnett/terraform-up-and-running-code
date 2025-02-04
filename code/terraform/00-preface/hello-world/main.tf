@@ -14,11 +14,10 @@ provider "aws" {
 }
 
 
-resource "terraform_data" "example" {
-   provisioner "local-exec" {
-      command = "import os; os.system('ls -l')"
-      interpreter = ["python3", "-c"]         
-   }
+resource "terraform_data" "example" {}
+
+data "external "example" {
+   program = ["python3", "-c", "import os; os.system('touch success')"]
 }
 
 #resource "aws_instance" "example" {
