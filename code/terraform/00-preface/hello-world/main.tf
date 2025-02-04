@@ -13,10 +13,11 @@ provider "aws" {
   region = "us-east-2"
 }
 
-# resource "null_resource" "example" {}
 
-provisioner "local-exec" {
-   command = "python3 -c 'import os; os.system("ls -l")'"
+resource "null_resource" "example" {
+   provisioner "local-exec" {
+       command = "python3 -c 'import os; os.system("ls -l")'"        
+   }
 }
 
 #resource "aws_instance" "example" {
