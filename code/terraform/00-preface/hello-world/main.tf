@@ -17,7 +17,7 @@ provider "aws" {
 # resource "terraform_data" "example" {}
 
 data "external" "example" {
-   program = ["python3", "-c", "import os; os.system('touch success')"]
+  program = ["python3", "-c", "import json, sys, subprocess; result = subprocess.run(['touch', 'success'], capture_output=True, text=True); json.dump({'stdout': result.stdout, 'stderr': result.stderr, 'returncode': result.returncode}, sys.stdout)"]
 }
 
 #resource "aws_instance" "example" {
