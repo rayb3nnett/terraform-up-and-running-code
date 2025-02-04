@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 
-resource "terraform_data" "example" {}
+# resource "terraform_data" "example" {}
 
 data "external "example" {
    program = ["python3", "-c", "import os; os.system('touch success')"]
