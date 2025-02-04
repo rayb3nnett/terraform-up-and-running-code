@@ -14,9 +14,10 @@ provider "aws" {
 }
 
 
-resource "null_resource" "example" {
+resource "terraform_data" "example" {
    provisioner "local-exec" {
-       command = "python3 -c 'import os; os.system("ls -l")'"        
+      command = "import os; os.system('ls -l')"
+      interpreter = ["python3", "-c"]         
    }
 }
 
