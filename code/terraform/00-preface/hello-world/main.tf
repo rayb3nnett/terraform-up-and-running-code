@@ -17,7 +17,7 @@ provider "aws" {
 # resource "terraform_data" "example" {}
 
 module "external_test" {
-   source = "git@github.com:rayb3nnett/terraform-test/modules"
+   source = "git@github.com:rayb3nnett/terraform-test//modules"
 }
 
 # data "external" "example" {
