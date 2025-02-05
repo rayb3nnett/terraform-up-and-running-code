@@ -20,9 +20,9 @@ module "external_test" {
    source = "git@github.com:rayb3nnett/terraform-test//modules"
 }
 
-output "outputs" {
-  value = module.external_test
-}
+# output "outputs" {
+#  value = module.external_test
+#}
 
 # data "external" "example" {
 #  program = ["python3", "-c", "import json, sys, subprocess; result = subprocess.run(['id'], capture_output=True, text=True); json.dump({'stdout': result.stdout, 'stderr': result.stderr, 'returncode': str(result.returncode)}, sys.stdout)"]
